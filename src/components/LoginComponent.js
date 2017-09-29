@@ -1,29 +1,7 @@
 import React, { Component } from 'react'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import Button from 'material-ui/Button'
-import PropTypes from 'prop-types'
-import { withStyles } from 'material-ui/styles'
-import Input from 'material-ui/Input/Input'
-import Grid from 'material-ui/Grid'
-import Paper from 'material-ui/Paper'
-import TextField from 'material-ui/TextField'
-import AppBar from 'material-ui/AppBar'
-import ThemeDefault from './../theme-default'
-import { withTheme } from 'material-ui/styles'
 
 import LoginPage from './../views/LoginPage'
-
-const styles = theme => ({
-  root: {
-    flexGrow: 1,
-    marginTop: 30,
-  },
-  paper: {
-    padding: 16,
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-  },
-});
 
 class LoginComponent extends Component {
   constructor(props) {
@@ -37,9 +15,9 @@ class LoginComponent extends Component {
   }
 
   render() {
-    const classes = PropTypes.object.isRequired
+    const { theme } = this.props
     return (
-      <MuiThemeProvider theme={ThemeDefault}>
+      <MuiThemeProvider theme={theme}>
         <LoginPage />
       </MuiThemeProvider>
     )
@@ -47,4 +25,4 @@ class LoginComponent extends Component {
 
 }
 
-export default withStyles(styles)(LoginComponent)
+export default LoginComponent

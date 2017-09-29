@@ -1,22 +1,14 @@
-import createMuiTheme from 'material-ui/styles/theme'
-import { blue, grey, red, indigo } from 'material-ui/colors'
+import Cookies from './cores/Cookies'
+import {createPalette, createMuiTheme } from 'material-ui/styles'
+import { blue, grey, red, indigo, amber } from 'material-ui/colors'
 
-const themeDefault = createMuiTheme({
-  root: {
-    backgroundColor: red[500],
-    marginTop: 5,
-  },
-  appBar: {
-    height: 57,
-    color: blue[600]
-  },
-  drawer: {
-    width: 230,
-    color: grey[900]
-  },
-  raisedButton: {
-    primaryColor: blue[600],
-  }
+const LoginTheme = createMuiTheme({
+  palette: createPalette({
+    primary: grey,
+    accent: amber,
+    error: red,
+    type: Cookies.getCookies('theme') || 'light',
+  })
 })
 
-export default themeDefault
+export default LoginTheme

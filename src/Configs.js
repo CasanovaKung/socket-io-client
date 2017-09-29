@@ -1,11 +1,11 @@
-let Configs;
+let Configs
 if (process.env.NODE_ENV === 'production')
 {
-    alert('No configs');
+    Configs = require('./configs-dev.json')
 }
 else
 {
-    Configs = require('./configs-dev.json');
+    Configs = require('./configs-dev.json')
 }
 
-module.exports = Configs;
+module.exports = Configs
